@@ -1,0 +1,196 @@
+body{
+    background-image: url("../Image/landscape-1471361336-urban-dictionary.jpg");
+    background-repeat: no-repeat;
+    background-size: 1300px 800px;
+    background-color:White Smoke;
+    opacity: 0.8;
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+.urban_dictionary_panel{
+border-style:solid;
+border-color:red;
+height:850px;
+width:1000px;
+position: relative;
+top:0px;
+left:150px;
+border-radius:10px;
+}
+
+.urban_dictionary_btn{
+width: 140px;
+height: 40px;
+border-radius:10px;
+background-color: red;
+font-size: 15px;
+position: relative;
+top:15px;
+left:30px;
+}
+
+#urban_dictionary_header{
+font-size:70px;
+position: relative;
+top:5px;
+left:280px;
+font-family:Papyrus;
+}
+
+#urban_dictionary_definition_panel{
+position: relative;
+top:75px;
+left:150px;
+}
+
+#urban_dictionary_txtbox{
+width:300px;
+height:50px;
+position: relative;
+top:-55px;
+left:250px;
+border-radius:10px;
+}
+
+#urban_dictionary_error{
+/*border-style:solid;
+border-color:red;*/
+width:50px;
+height: 20px;
+position: relative; 
+left:130px;
+top:-55px;
+color:red;
+}
+
+#urban_dictionary_word{
+font-size:30px;
+font-weight:bold;
+position: absolute;
+top:300px;
+left:250px;
+font-family:Papyrus;
+}
+
+#urban_dictionary_word1{
+font-size:30px;
+font-weight:bold;
+position: absolute;
+top:330px;
+left:350px;
+font-family:Papyrus; 
+text-decoration: underline;
+}
+
+#urban_dictionary_definition{
+border-style:solid;
+border-color:blue;
+height:350px;
+width:980px;
+position: relative;
+top:250px;
+left:-143px;
+}
+
+#urban_dictionary_definition0{
+font-size:20px;
+font-weight:bold;
+position: relative;
+left:20px;
+top:70px;
+}
+
+#urban_dictionary_definition1{
+font-size:20px;
+position: relative;
+left:20px;
+top:70px;
+}
+
+#urban_dictionary_example{
+/*border-style:solid;
+border-color:red;*/
+position: relative;
+left:-125px;
+top:90px;
+width:900px;
+height:155px;
+}
+
+#urban_dictionary_example_1{
+font-size:20px;
+font-weight:bold;
+position: relative;
+left: 5px;
+top:5px;
+}
+#urban_dictionary_example_2{
+font-size:20px;
+font-weight:bold;
+position: absolute;
+left:5px;
+top:70px;
+
+}
+#urban_dictionary_example_3{
+font-size:20px;
+font-weight:bold;
+position: absolute;
+top:135px;
+left:5px;
+}
+
+#urban_dictionary_example_4{
+font-size:20px;
+font-weight:bold;
+position: absolute;
+top:135px;
+left:500px;
+}
+
+
+
+#urban_dictionary_example1{
+/* border-style:solid;
+border-color:red;*/
+position: relative;
+width:50px;
+top:5px;
+left:5px;
+font-size:16px;
+text-align: left;
+}
+
+#urban_dictionary_example2{
+/*border-style:solid;
+border-color:red;*/
+position: absolute;
+width:130px;
+top:70px;
+left:60px;
+font-size:20px;
+text-align: left;
+}
+
+#urban_dictionary_example3{
+/*border-style:solid;
+border-color:red;*/
+position: absolute;
+width:150px;
+top:139px;
+left:105px;
+font-size:16px;
+text-align: left;
+}
+
+
+#urban_dictionary_example4{
+/*border-style:solid;
+border-color:red;*/
+position: absolute;
+width:100px;
+top:139px;
+left:620px;
+font-size:16px;
+text-align: left;
+}
