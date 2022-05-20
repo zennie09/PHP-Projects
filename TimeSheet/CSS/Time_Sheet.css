@@ -1,0 +1,595 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 24, 2021, 3:50:11 PM
+    Author     : ZES
+*/
+
+body {
+    font-family: sans-serif;
+    width: 300px;
+}
+
+.Login {
+    border-color: black;
+    border: 1px solid blue;
+    position: relative;
+    height: 500px;
+    width: 800px;
+    top: 150px;
+    left: 500px;
+    border-radius: 25px;
+}
+
+.dot {
+    height: 60px;
+    width: 60px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 120px;
+    left: 20px;
+    margin: 20px 60px 20px 10px;
+}
+
+.dot1 {
+    height: 50px;
+    width: 50px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 120px;
+    left: 20px;
+    margin: 20px 60px 20px 10px;
+}
+
+.TimeSheet_Form {
+    border-color: black;
+    border: 5px solid blue;
+    position: relative;
+    bottom: -300px;
+    height: 800px;
+    width: 900px;
+    left: 870px;
+    top: -120px;
+    border-radius: 25px;
+}
+
+.log_out{
+    width: 90px;
+    height: 40px;
+    font-size: 20px;
+    background-color: blue;
+    border-radius: 5px;
+ 
+}
+
+.btn_submit {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    position: fixed;
+    top: 760px;
+    left: 1200px;
+}
+
+.btn_submit:hover, .log_out:hover{
+cursor: pointer;
+background-color: red;
+color:white;
+}
+
+#Login_Title {
+    font-size: 20px;
+    position: relative;
+    font-weight: bold;
+    left: 50px;
+    top: 50px;
+}
+
+#Login_1 {
+    position: relative;
+    background-color: blue;
+    height: 500px;
+    width: 400px;
+    color: white;
+    border-radius: 5px;
+}
+
+#Login_2 {
+    position: relative;
+
+    height: 500px;
+    width: 400px;
+    right: -400px;
+    top: -502px;
+}
+
+#Login_1_Heading {
+    position: relative;
+    top: 150px;
+    font-size: 30px;
+    left: 50px;
+}
+
+#Login_1_Paragraph {
+    position: relative;
+    top: 180px;
+    font-size: 10px;
+    text-align: center;
+}
+
+#Login_Account {
+    position: relative;
+    font-size: 10px;
+    text-align: center;
+    top: 50px;
+    left: 15px;
+    display: inline block;
+
+}
+
+#Login_label1 {
+    color: black;
+    font-size: 15px;
+    padding: 30px;
+    position: relative;
+    left: 15px;
+    font-size: 12px;
+
+}
+
+#Login_Create_Account {
+    width: 100px;
+    height: 30px;
+    right: -100px;
+    color: blue;
+}
+
+#Login_Email_Password {
+    position: relative;
+    top: 150px;
+}
+
+#Login_Button {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    line-height: 2.5;
+
+}
+
+#Login_Email,
+#email {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+    position: relative;
+    left: 101px;
+    bottom: 30px;
+
+}
+
+#Login_Password,
+#password {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+    position: relative;
+    bottom: -20px;
+    left: -90px;
+}
+
+
+#Login_Forget_Password {
+    position: relative;
+    left: 40px;
+}
+
+
+#Login_btn {
+    position: relative;
+    left: 50px;
+    width: 100px;
+    height: 30px;
+}
+
+#Login_links_1 {
+    display: inline block;
+    padding: 20px;
+    position: relative;
+    top: 120px;
+    left: 20px;
+    margin: 15px 60px 15px 0px;
+}
+
+#TimeSheet_Title {
+    position: relative;
+    left: 1200px;
+    top: 25px;
+    font-size: 40px;
+    bottom: -180px;
+}
+
+#TimeSheet_line {
+    position: relative;
+    top: -10px;
+    width: 700px;
+    left: 990px;
+}
+
+#timesheet_body {
+    background-image: url("../Images/istockphoto-1208520179-612x612.jpg");
+    background-repeat: no-repeat;
+    background-size: 1840px 880px;
+
+}
+
+#TimeSheet_Profile {
+    position: relative;
+    top: -20px;
+    left: 1000px;
+    color: black;
+    width: 80px;
+    height: 50px;
+    color: black;
+    text-align: center;
+}
+
+
+#TimeSheet_Profile1 {
+    position: relative;
+    top: 25px;
+    left: 50px;
+    color: black;
+    width: 80px;
+    height: 50px;
+    color: black;
+    text-align: center;
+}
+
+#Timesheet_WTC {
+    /*border-style: solid;
+    border-color: black;*/
+    position: relative;
+    top: 125px;
+}
+
+#TimeSheet_WorkTitle {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    bottom: -0px;
+    right: -50px;
+    width: 240px;
+}
+
+
+#clients {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    bottom: 0px;
+    left: 100px;
+    width: 240px;
+}
+
+#start_time {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    bottom: -200px;
+    border-style: solid;
+    border-color: black;
+    width: 220px;
+    left: 50px;
+    top: 200px;
+}
+
+#end_time {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    bottom: -129px;
+    border-style: solid;
+    border-color: black;
+    left: 420px;
+    top: 129px;
+    width: 220px;
+}
+
+#wt_label {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    left: 50px;
+}
+
+#ct_label {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    left: 100px;
+}
+
+#st_label {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    top: 200px;
+    left: 50px;
+}
+
+#et_label {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    left: 420px;
+    top: 130px;
+}
+
+
+#TimeSheet_Total_Time_Spent {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-size: 20px;
+    bottom: -170px;
+}
+
+#Total_Time_Spent {
+    width: 70px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#TimeSheet_Comment {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    bottom: -180px;
+    right: 50px;
+}
+
+#lbl_Comment {
+    position: relative;
+    bottom:70px;
+    left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#Timesheet_Comment_txa {
+    width: 550px;
+    height: 100px;
+    position: relative;
+    top: -25px;
+    left: 0px;
+    resize: none;
+    font-size: 20px;
+}
+
+#TimeSheet_Submit {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    bottom: -180px;
+}
+
+
+#TimeSheet_Total_Time_Spent {
+    width: 850px;
+    height: 250px;
+    border-radius: 10px;
+    position: relative;
+    left: 10px;
+    top: 150px;
+}
+
+#Total_Time_Spent {
+    border-color: navy;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+    position: relative;
+    left: -100px;
+    top: 5px;
+    border-radius: 5px;
+}
+
+#Total_Time_Spent_hours {
+    border-color: navy;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+    border-radius: 5px;
+}
+
+#Total_Time_Spent_minutes {
+    border-color: navy;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+    position: relative;
+    left: 100px;
+    top: 5px;
+    border-radius: 5px;
+}
+
+#lbl_days {
+    position: fixed;
+    top: 555px;
+    left: 970px;
+    font-size: 40px;
+}
+
+#lbl_hrs {
+    position: fixed;
+    top: 555px;
+    left: 1270px;
+    font-size: 40px;
+}
+
+#lbl_mins {
+    position: fixed;
+    top: 555px;
+    left: 1555px;
+    font-size: 40px;
+}
+
+input[type=text]:disabled {
+    background: #dddddd;
+    text-align: center;
+}
+
+
+.timesheet_summary{
+    position: relative;
+    left:200px;
+    height:845px;
+    width:1500px;
+}
+
+#timesheet_header{
+    position: relative;
+    text-align: center;
+    top: 7px;
+}
+
+#timesheet_header_title{
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+}
+
+#timesheet_se_date{
+    position: relative;
+    top:20px;
+}
+
+#timesheet_se_hours{
+    position: relative;
+    left:650px;
+    top:3px;
+}
+
+#timesheet_employee{
+    width:1450px;
+    height: 720px;
+    position:relative;
+    left:20px;
+    top:-250px;
+    
+}
+
+#timesheet_employee_wt{
+    position: relative;
+    top:30px;
+    left:20px;
+    font-size: large;
+}
+
+#timesheet_employee_cfname{
+    position: relative;
+    top:30px;
+    left:400px;
+    font-size: large;
+}
+
+#timesheet_employee_sdate{
+    position: relative;
+    top:100px;
+    left:-20px;
+    font-size: large;
+}
+
+#timesheet_employee_edate{
+    position: relative;
+    top:150px;
+    left:-110px;
+    font-size: large;
+}
+
+#timesheet_employee_days
+{
+    position: relative;
+    left:-400px;
+    top:250px;
+    font-size: large;
+
+}
+
+#timesheet_employee_hours
+{
+    position: relative;
+    left:-200px;
+    top:250px;
+    font-size: large;
+}
+
+#timesheet_employee_mins
+{
+    position: relative;
+    left:0px;
+    top:250px;
+    font-size: large;
+}
+
+
+#timesheet_employee_comment{
+    position: relative;
+    left:-580px;
+    top:400px;
+    font-size: large;
+}
+
+#timesheet_employee_entry_date{
+    position: relative;
+    left:23px;
+    top:450px;
+    font-size: large;
+}
+
+#timesheet_employee_header{
+    text-align: center;
+    position: relative;
+    bottom: 12px;
+    text-decoration: underline;
+}
+
+#timesheet_employee_table{
+    width: 1450px;
+    border:4px solid black;
+    position: relative;
+    right: 0px;
+    border-radius: 5px;
+}
+th, tr,td{
+    padding: 5px;
+    width:300px;
+    height:40px;
+  }

@@ -1,0 +1,192 @@
+Create Table Login(
+Login_id int NOT NULL AUTO_INCREMENT,
+Login_Name varchar(30) NOT NULL,
+Login_Password varchar(50) NOT NULL,
+Login_Entry_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+Login_Update_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY (Login_id)
+);
+/**Store Procedure for Login**/
+
+1. CREATE PROCEDURE `Insert_Login` (in l_name varchar(30), in l_password varchar(50))
+	BEGIN
+		INSERT INTO Login(Login_Name, Login_Password)
+		values(l_name, l_password);
+	END
+
+
+2. CREATE PROCEDURE `Select_all_login`()
+	BEGIN
+		Select *
+        	from login;
+	END
+
+3. CREATE PROCEDURE `Delete_user_login` (in l_id int)
+	BEGIN
+		Delete from user_login
+        	where Login_id = l_id;
+	END
+
+
+
+
+4.CREATE PROCEDURE `Update_user_login` (in l_id int, in l_name varchar(30), in l_password varchar(50))
+	BEGIN
+		UPDATE login
+		SET Login_Name= l_name,
+		    Login_Password = l_password,
+		    Login_Update_Date = CURRENT_TIMESTAMP()
+		WHERE Login_id = l_id;
+	END
+
+/**End Store Procedure for Login**/
+
+Create Table WorkTitle(
+Work_Title_id int NOT NULL AUTO_INCREMENT,
+Work_Title_Name varchar(30) NOT NULL,
+Work_Title_Entry_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+Work_Title_Update_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (Work_Title_id)
+);
+/**Store Procedure for Work Title**/
+
+1. CREATE PROCEDURE `Insert_Work_Title` (in w_title_name varchar(30))
+BEGIN
+	INSERT INTO work_title(Work_Title_id, Work_Title_Name)
+     values(substring(w_title_name, 1, 4), w_title_name);
+END
+
+2. CREATE PROCEDURE `Select_worktitle`()
+	BEGIN
+		Select * 
+        	from work_title;
+	END
+
+
+3.CREATE PROCEDURE `Delete_worktitle` (in wt_id varchar(5))
+	BEGIN
+		Delete from work_title
+     		where Work_Title_id = wt_id;
+	END
+
+
+
+4.CREATE PROCEDURE `Update_worktitle`(in wt_id varchar(5),in wt_name varchar(30))
+	BEGIN
+		UPDATE work_title
+		SET Work_title_name= wt_name,
+		    Work_Title_Update_Date = CURRENT_TIMESTAMP()
+		WHERE Work_title_id = wt_id;
+	END
+
+5. CREATE PROCEDURE `Work_Titles`()
+BEGIN
+		select work_title_id, work_title_name
+		from work_title;
+END
+/**End Store Procedure for Work Title**/
+
+Create Table Clients(
+Client_id int NOT NULL AUTO_INCREMENT,
+Client_First_Name varchar(30) NOT NULL,
+Client_Last_Name varchar(30) NOT NULL,
+Client_Full_Name varchar(50) NOT NULL,
+Client_Work_Title_id int NOT NULL,
+Client_Entry_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+Client_Update_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (Client_id),
+FOREIGN KEY (Client_Work_Title_id) REFERENCES worktitle(Work_Title_id)
+);
+
+/**Store Procedure for Clients**/
+
+1. CREATE PROCEDURE `Insert_Clients` (in cf_name varchar(30), in cl_name varchar(30),cwt_id varchar(5))
+	BEGIN
+		INSERT INTO timesheet_clients(Client_First_Name, Client_Last_Name, Client_Full_Name, Client_Work_Title_id)
+                values(cf_name, cl_name, CONCAT(cf_name,' ', cl_name), cwt_id);
+	END
+
+2. CREATE PROCEDURE `Select_timesheet_clients` ()
+	BEGIN
+		select *
+       		FROM timesheet_clients;
+	END
+
+
+
+3.CREATE PROCEDURE `Delete_timesheet_clients` (in c_id int)
+	BEGIN
+		delete from timesheet_clients
+        	where client_id = c_id;
+	END
+
+
+
+4.CREATE PROCEDURE `Update_Clients` (in c_id int, in c_fname varchar(30), in c_lname varchar(30), 
+								   in c_fullname varchar(50), in cwt_id varchar(5))
+	BEGIN
+		UPDATE timesheet_clients
+		SET Client_First_Name= c_fname,
+		    Client_Last_Name= c_lname,
+            	    Client_Full_Name= concat(c_fname, ' ', c_lname),
+		    Client_Work_Update_Date = CURRENT_TIMESTAMP()
+		WHERE Client_Work_Title_id = cwt_id;
+	END
+/**End Store Procedure for Clients**/
+
+
+Create Table TimeSheet(
+TimeSheet_id int NOT NULL AUTO_INCREMENT,
+TimeSheet_Work_Title_id int NOT NULL,
+TimeSheet_Client_Full_Name varchar(50) NOT NULL,
+TimeSheet_Start_Date datetime NOT NULL,
+TimeSheet_End_Date datetime NOT NULL,
+TimeSheet_Total_Time_Spent int NOT NULL,
+Timesheet_Login_id int NOT NULL,
+TimeSheet_Entry_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+TimeSheet_Update_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (TimeSheet_id),
+FOREIGN KEY (Timesheet_Login_id) REFERENCES login(Login_id),
+FOREIGN KEY (TimeSheet_Work_Title_id) REFERENCES worktitle(Work_Title_id)
+);
+
+/**Store Procedure for TimeSheet**/
+
+1. CREATE PROCEDURE `Insert_TimeSheet` (in ts_wt_id varchar(5), in ts_cfull_name varchar(50), in ts_s_date datetime,
+					in ts_e_date datetime, ts_tt_spent int, ts_l_id int )
+	BEGIN
+		INSERT INTO time_sheet(TimeSheet_Work_Title_id, TimeSheet_Client_Full_Name, TimeSheet_Start_Date, TimeSheet_End_Date,
+								TimeSheet_Total_Time_Spent, TimeSheet_Login_id)
+                 values(ts_wt_id, ts_cfull_name, ts_s_date, ts_e_date, ts_tt_spent, ts_l_id);
+	END
+
+
+2. CREATE PROCEDURE `Select_time_sheet`()
+	BEGIN
+		SELECT *
+        	FROM time_sheet;
+	END
+
+
+
+3.CREATE PROCEDURE `Delete_time_sheet` (in ts_id int)
+	BEGIN
+		delete from time_sheet
+        	where TimeSheet_id = ts_id;
+	END
+
+
+4.CREATE PROCEDURE `Update_Timesheet` (in ts_id int, in tswt_id varchar(5), in tss_date datetime, in tse_date datetime,
+									 in tstt_spent int, in tsl_id int)
+	BEGIN
+			UPDATE time_sheet
+			SET TimeSheet_Work_Title_id= tswt_id,
+			TimeSheet_Start_Date= tss_date,
+            		TimeSheet_End_Date= tse_date,
+            		TimeSheet_Total_Time_Spent= tstt_spent,
+           		Timesheet_Login_id = tsl_id,
+			TimeSheet_Update_Date = CURRENT_TIMESTAMP()
+			WHERE TimeSheet_id = ts_id;
+	END
+
+/**End Store Procedure for TimeSheet**/
