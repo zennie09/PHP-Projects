@@ -1,3 +1,5 @@
+CREATE DATABASE TimeSheet;
+
 Create Table Login(
 Login_id int NOT NULL AUTO_INCREMENT,
 Login_Name varchar(30) NOT NULL,
@@ -28,8 +30,6 @@ Login_Update_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	END
 
 
-
-
 4.CREATE PROCEDURE `Update_user_login` (in l_id int, in l_name varchar(30), in l_password varchar(50))
 	BEGIN
 		UPDATE login
@@ -38,6 +38,20 @@ Login_Update_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		    Login_Update_Date = CURRENT_TIMESTAMP()
 		WHERE Login_id = l_id;
 	END
+
+5. CREATE PROCEDURE `UserName`(in l_id int(11))
+BEGIN
+		Select Login_Name
+        from login
+        where Login_id = l_id;
+END
+
+6. CREATE PROCEDURE `Login_ID`(in l_name varchar(30), in l_password varchar(30))
+BEGIN
+		select Login_id
+        from login
+        where Login_Name = l_name and Login_Password = l_password;
+END
 
 /**End Store Procedure for Login**/
 
@@ -83,6 +97,19 @@ END
 BEGIN
 		select work_title_id, work_title_name
 		from work_title;
+END
+
+6. CREATE PROCEDURE `Clients_Works`(in cwt_id int)
+BEGIN
+			SELECT Client_Work_title_id, Client_Full_Name
+			from clients
+			where Client_Work_title_id = cwt_id;
+END
+
+7.CREATE PROCEDURE `Clients_Works_1`()
+BEGIN
+	SELECT Client_Work_Title_id, Client_Full_Name 
+    FROM clients;
 END
 /**End Store Procedure for Work Title**/
 
@@ -188,5 +215,13 @@ FOREIGN KEY (TimeSheet_Work_Title_id) REFERENCES worktitle(Work_Title_id)
 			TimeSheet_Update_Date = CURRENT_TIMESTAMP()
 			WHERE TimeSheet_id = ts_id;
 	END
+
+5. CREATE PROCEDURE `time_sheet_summary`(in user_login int(11))
+BEGIN
+	SELECT *, Work_Title_Name
+	FROM timesheet
+	INNER JOIN worktitle ON timesheet.TimeSheet_Work_Title_id = Work_Title_id
+	where Timesheet_Login_id = user_login;
+END
 
 /**End Store Procedure for TimeSheet**/
